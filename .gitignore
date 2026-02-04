@@ -3,6 +3,8 @@
 # dependencies
 node_modules/
 
+#Proteccion de SP credentials xd
+.env
 # Expo
 .expo/
 dist/
