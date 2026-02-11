@@ -1,114 +1,141 @@
-🍔 3D Burger App + Push Notifications
+Perfecto 🔥 entonces tu proyecto ya tiene un stack bastante sólido:
 
-Aplicación desarrollada con Expo que combina:
+🔐 Autenticación con Supabase
 
-🔔 Notificaciones push usando Expo Notifications
+🔔 Notificaciones Push con Expo Notifications
 
-🍔 Renderizado 3D de una hamburguesa usando React Three Fiber
+🍔 Render 3D con React Three Fiber
 
-⚡ Navegación con Expo Router
+⚡ Expo + Expo Router
 
-📱 Soporte para Android y Web
+Te dejo un README actualizado, más completo y profesional:
+
+🍔 3D Burger App
+Expo + Push Notifications + Supabase + React Three Fiber
+
+Aplicación desarrollada con Expo que integra renderizado 3D interactivo, autenticación de usuarios y sistema de notificaciones push en tiempo real.
 
 🚀 Tecnologías principales
 
-Expo
+⚛️ Expo
 
-Expo Notifications
+🔔 Expo Notifications
 
-React Three Fiber
+🧱 React Three Fiber (Three.js)
 
-Three.js
+🔐 Supabase (Auth + Database)
 
-Expo Router (file-based routing)
+🗂 Expo Router (file-based routing)
 
-📦 Instalación
-npm install
+🔐 Autenticación con Supabase
 
-▶️ Ejecutar el proyecto
-Android
-npm run android
+La app utiliza Supabase para:
 
+Registro de usuarios (email + contraseña)
 
-Si tienes problemas:
+Inicio de sesión
 
-Ejecuta IDX: Rebuild Environment
+Gestión de sesiones
 
-O usa:
+Almacenamiento seguro de credenciales
 
-npm run android -- --tunnel
+Base de datos para guardar tokens de notificaciones
 
+Flujo básico:
 
-Puedes abrir la app en:
+Usuario se registra o inicia sesión.
 
-Development build
+Se obtiene el Expo Push Token.
 
-Emulador Android
+El token se guarda en Supabase asociado al usuario.
 
-Expo Go (limitado para ciertas APIs nativas)
-
-Web
-npm run web
+Desde backend o Edge Functions se envían notificaciones push.
 
 🔔 Notificaciones Push
 
-Este proyecto usa Expo Push Notifications para:
+Implementadas con Expo Push Notifications.
 
-Solicitar permisos al usuario
+Funcionalidades:
 
-Obtener el Expo Push Token
+Solicitud de permisos
 
-Enviar notificaciones desde el backend
+Obtención de ExpoPushToken
 
-Manejar notificaciones en foreground y background
+Manejo de notificaciones en:
 
-Asegúrate de configurar:
+Foreground
 
-app.json con expo-notifications
+Background
 
-EAS Build si necesitas producción
+App cerrada
 
-Un servidor backend para enviar las notificaciones
+Asociación del token al usuario autenticado
 
 Documentación oficial:
 https://docs.expo.dev/push-notifications/overview/
 
-🍔 Modelo 3D
+🍔 Renderizado 3D
 
-La hamburguesa está renderizada usando:
+La hamburguesa 3D está desarrollada con:
 
 @react-three/fiber
 
 @react-three/drei
 
-Three.js
+three
 
 Características:
 
-Renderizado 3D en tiempo real
+Modelo 3D interactivo
 
-Iluminación y cámara personalizadas
+Iluminación personalizada
 
-Soporte táctil (rotación/interacción si aplica)
+Cámara configurada manualmente
 
-📁 Estructura del proyecto
+Soporte para rotación / interacción táctil
+
+📦 Instalación
+npm install
+
+▶️ Ejecutar la aplicación
+Android
+npm run android
+
+
+Si hay problemas:
+
+npm run android -- --tunnel
+
+Web
+npm run web
+
+🗂 Estructura del proyecto
 app/
  ├── index.tsx
- ├── notifications.ts
+ ├── login.tsx
+ ├── register.tsx
  ├── components/
  │    ├── Burger3D.tsx
+ │    ├── NotificationHandler.ts
  │    └── ...
+lib/
+ ├── supabase.ts
 
-🔄 Reiniciar el proyecto base
-
-Si quieres limpiar el proyecto:
-
-npm run reset-project
+🧠 Arquitectura General
+Usuario → Supabase Auth → App Expo
+                         ↓
+                  Obtiene Push Token
+                         ↓
+                 Guarda en Supabase
+                         ↓
+              Backend envía notificación
+                         ↓
+                    Dispositivo
 
 📚 Recursos
 
-Expo Docs → https://docs.expo.dev
+Expo → https://docs.expo.dev
+
+Supabase → https://supabase.com/docs
 
 React Three Fiber → https://docs.pmnd.rs/react-three-fiber
-
-Three.js → https://threejs.org/
