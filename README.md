@@ -1,53 +1,114 @@
-> Edited for use in IDX on 07/09/12
+🍔 3D Burger App + Push Notifications
 
-# Welcome to your Expo app 👋
+Aplicación desarrollada con Expo que combina:
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+🔔 Notificaciones push usando Expo Notifications
 
-## Get started
+🍔 Renderizado 3D de una hamburguesa usando React Three Fiber
 
-#### Android
+⚡ Navegación con Expo Router
 
-Android previews are defined as a `workspace.onStart` hook and started as a vscode task when the workspace is opened/started.
+📱 Soporte para Android y Web
 
-Note, if you can't find the task, either:
-- Rebuild the environment (using command palette: `IDX: Rebuild Environment`), or
-- Run `npm run android -- --tunnel` command manually run android and see the output in your terminal. The device should pick up this new command and switch to start displaying the output from it.
+🚀 Tecnologías principales
 
-In the output of this command/task, you'll find options to open the app in a
+Expo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Expo Notifications
 
-You'll also find options to open the app's developer menu, reload the app, and more.
+React Three Fiber
 
-#### Web
+Three.js
 
-Web previews will be started and managred automatically. Use the toolbar to manually refresh.
+Expo Router (file-based routing)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+📦 Instalación
+npm install
 
-## Get a fresh project
+▶️ Ejecutar el proyecto
+Android
+npm run android
 
-When you're ready, run:
 
-```bash
+Si tienes problemas:
+
+Ejecuta IDX: Rebuild Environment
+
+O usa:
+
+npm run android -- --tunnel
+
+
+Puedes abrir la app en:
+
+Development build
+
+Emulador Android
+
+Expo Go (limitado para ciertas APIs nativas)
+
+Web
+npm run web
+
+🔔 Notificaciones Push
+
+Este proyecto usa Expo Push Notifications para:
+
+Solicitar permisos al usuario
+
+Obtener el Expo Push Token
+
+Enviar notificaciones desde el backend
+
+Manejar notificaciones en foreground y background
+
+Asegúrate de configurar:
+
+app.json con expo-notifications
+
+EAS Build si necesitas producción
+
+Un servidor backend para enviar las notificaciones
+
+Documentación oficial:
+https://docs.expo.dev/push-notifications/overview/
+
+🍔 Modelo 3D
+
+La hamburguesa está renderizada usando:
+
+@react-three/fiber
+
+@react-three/drei
+
+Three.js
+
+Características:
+
+Renderizado 3D en tiempo real
+
+Iluminación y cámara personalizadas
+
+Soporte táctil (rotación/interacción si aplica)
+
+📁 Estructura del proyecto
+app/
+ ├── index.tsx
+ ├── notifications.ts
+ ├── components/
+ │    ├── Burger3D.tsx
+ │    └── ...
+
+🔄 Reiniciar el proyecto base
+
+Si quieres limpiar el proyecto:
+
 npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📚 Recursos
 
-## Learn more
+Expo Docs → https://docs.expo.dev
 
-To learn more about developing your project with Expo, look at the following resources:
+React Three Fiber → https://docs.pmnd.rs/react-three-fiber
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Three.js → https://threejs.org/
